@@ -32,8 +32,8 @@
         <p class="kicker">Dec 2025 · Embedded</p>
         <h1>Health Tracker with STM32 and LoRa</h1>
         <p class="page-intro">
-          An embedded health tracker built in C on an STM32 microcontroller, with LoRa for wireless
-          reporting and onboard heart-rate and motion sensing.
+          A wearable animal-health tracking prototype for farmers and pet owners, combining heart-rate
+          and gait sensing with long-range LoRa reporting.
         </p>
         <div class="tags" style="margin-bottom: 22px">
           <span class="tag">C</span>
@@ -42,23 +42,97 @@
           <span class="tag">CubeIDE</span>
           <span class="tag">Sensors</span>
         </div>
+        <div class="project-actions">
+          <a class="btn btn-primary" href="https://github.com/kate-omi/PetHealthTracker" target="_blank" rel="noreferrer">
+            View the GitHub repository
+          </a>
+          <a class="btn btn-ghost" href="#demo">Watch the demo</a>
+        </div>
+        <div class="project-demo project-demo-top" id="demo">
+          <video controls preload="metadata">
+            <source src="../assets/Health-Tracker-Demo.MOV" type="video/quicktime" />
+            Your browser does not support embedded video. <a href="../assets/Health-Tracker-Demo.MOV">View the demo video</a>.
+          </video>
+          <p class="project-demo-caption">Short demonstration of the health-tracking prototype.</p>
+        </div>
         <article class="project-body">
           <h2>Overview</h2>
           <p>
-            This project implements a compact health-tracking node that collects physiological and
-            motion data and transmits it over a LoRa link. Firmware was written in C and developed
-            in CubeIDE, targeting an STM32 microcontroller.
+            The goal was to prototype an animal health tracking tool that could help farmers and pet
+            owners monitor an animal's heart rate and movement. The wearable node uses an Adafruit
+            LoRa module, an MPU6050 accelerometer and gyroscope, and a MAX30102 optical heart-rate
+            sensor. If developed beyond the prototype stage, the electronics would be consolidated
+            into a single compact PCB and packaged for comfortable use on an animal.
           </p>
-          <h2>What I built</h2>
-          <ul>
-            <li>STM32 firmware in C for sensor bring-up, sampling, and packetization.</li>
-            <li>Integration of a LoRa module for wireless communication.</li>
-            <li>Heart-rate and accelerometer sensing on a single embedded platform.</li>
-          </ul>
+          <h2>Implementation</h2>
           <p>
-            The goal was a working end-to-end path: sense, process on-device, and send, rather than
-            a simulation-only prototype.
+            I implemented the wireless communication and receiver/display side of the prototype, and
+            integrated it with Matthew's sensor pipeline. The RFM9x driver was adapted from existing
+            Arduino-oriented LoRa code and rewritten around the STM32 HAL SPI interface. It handles
+            module reset and version checks, LoRa mode configuration, FIFO access, transmit/receive
+            state changes, interrupt flags, and packet completion.
           </p>
+          <p>
+            On the transmitting STM32, I defined the application payload and packed the computed values
+            into fixed-width fields: heart rate, acceleration magnitude, and step count. The packet is
+            sent periodically over LoRa using the RFM9x FIFO. On the receiving STM32, I implemented the
+            matching receive path, unpacked the multi-byte values, and formatted them over UART so a
+            laptop could act as the display device. This established the end-to-end flow from sensor
+            readings to a remotely viewable health and activity summary.
+          </p>
+          <p>
+            Matthew Lee implemented the heart-rate and IMU hardware integration, sensor initialization,
+            data acquisition, and signal processing.
+          </p>
+          <h2>Bandwidth and power analysis</h2>
+          <p>
+            These are theoretical estimates based on the
+            demo configuration, not a production battery-life measurement.
+          </p>
+          <div class="metrics-table" role="table" aria-label="Bandwidth and power analysis">
+            <div class="metrics-row metrics-heading" role="row">
+              <span role="columnheader">Module</span>
+              <span role="columnheader">Demo rate or time</span>
+              <span role="columnheader">Estimated active time</span>
+            </div>
+            <div class="metrics-row" role="row">
+              <span role="cell">IMU over I2C</span>
+              <span role="cell">1100 samples/s, 105.6 kbps</span>
+              <span role="cell">0.264 s/s</span>
+            </div>
+            <div class="metrics-row" role="row">
+              <span role="cell">IR sensor over I2C</span>
+              <span role="cell">32 samples/s, 1024 bps</span>
+              <span role="cell">0.00256 s/s</span>
+            </div>
+            <div class="metrics-row" role="row">
+              <span role="cell">LoRa over SPI</span>
+              <span role="cell">800 bits/s</span>
+              <span role="cell">0.000008 s/s</span>
+            </div>
+            <div class="metrics-row" role="row">
+              <span role="cell">CMSIS FFT</span>
+              <span role="cell">224 microseconds</span>
+              <span role="cell">0.000224 s/s</span>
+            </div>
+          </div>
+          <p>
+            The combined estimate is 0.266792 seconds of active CPU time per second, or 26.7% active
+            and 73.3% available for sleep. Using the report's 3.3 V estimates, demo CPU power was
+            46 mA x 3.3 V = 0.1518 W. A sleep current of 12.46 mA would save approximately 0.11 W,
+            a theoretical 73% reduction in CPU power consumption.
+          </p>
+          <h2>Source references</h2>
+          <p>
+            The project code was based on or adapted from the following external repositories. The
+            LoRa interface was substantially rewritten for the STM32 platform.
+          </p>
+          <ol class="source-list">
+            <li><a href="https://github.com/hallard/RadioHead" target="_blank" rel="noreferrer">RadioHead</a> by Hallard, used as a reference for packet-radio behavior.</li>
+            <li><a href="https://github.com/henriheimann/stm32-hal-rfm95" target="_blank" rel="noreferrer">STM32 HAL RFM95</a> by Henriheimann, used as a reference for the RFM95/RFM9x driver.</li>
+            <li><a href="https://github.com/eepj/stm32-max30102" target="_blank" rel="noreferrer">stm32-max30102</a> by eepj, used as a reference for the MAX30102 interface.</li>
+            <li><a href="https://github.com/svenikea/MPU6050" target="_blank" rel="noreferrer">MPU6050</a> by svenikea, used as a reference for the IMU interface.</li>
+          </ol>
         </article>
       </div>
     </main>
