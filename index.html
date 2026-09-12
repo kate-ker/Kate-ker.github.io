@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Kate Ker | Electrical & Computer Engineering</title>
+    <meta
+      name="description"
+      content="Portfolio of Kate Ker, Electrical and Computer Engineering student at the University of Toronto. Signal integrity, functional safety, PCB design, and embedded systems."
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;600&family=Outfit:wght@500;650&family=Source+Sans+3:wght@400;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="css/styles.css" />
+  </head>
+  <body>
+    <div class="page-bg" aria-hidden="true"></div>
+    <header class="site-header">
+      <div class="wrap header-inner">
+        <a class="logo" href="index.html">Kate Ker</a>
+        <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav">
+          Menu
+        </button>
+        <nav class="nav" id="site-nav">
+          <a href="#about">About</a>
+          <a href="#skills">Skills</a>
+          <a href="#projects">Projects</a>
+          <a href="resume.html">Resume</a>
+        </nav>
+      </div>
+    </header>
+
+    <main>
+      <section class="hero" id="about">
+        <div class="wrap">
+          <p class="kicker">Electrical &amp; Computer Engineering</p>
+          <h1>Kate Ker</h1>
+          <p class="lede">
+            I am an Electrical and Computer Engineering student at the University of Toronto
+            (2022–2027). My work sits at the intersection of hardware, signal integrity, and
+            functional safety: from 112G PAM4 Ethernet and PCIe Gen5 channels at Tenstorrent, to
+            ISO 26262 safety validation at Rivian, to leading low-voltage architecture on the
+            Formula Racing team. I care about designs that survive the lab and the vehicle, not just
+            the schematic.
+          </p>
+          <div class="hero-actions">
+            <a class="btn btn-primary" href="#projects">View projects</a>
+            <a class="btn btn-ghost" href="resume.html">Open resume</a>
+          </div>
+        </div>
+      </section>
+
+      <section id="skills">
+        <div class="wrap">
+          <div class="section-head">
+            <h2>Skills</h2>
+            <p>Design, analysis, firmware, and the lab tools I use day to day.</p>
+          </div>
+          <div class="skill-groups">
+            <article class="skill-card">
+              <h3>Design tools</h3>
+              <div class="tags">
+                <span class="tag">Cadence Allegro</span>
+                <span class="tag">Altium</span>
+                <span class="tag">Soldering</span>
+                <span class="tag">SUE SoC Design Manager</span>
+                <span class="tag">MAX layout editor</span>
+                <span class="tag">SolidWorks</span>
+                <span class="tag">RapidHarness</span>
+              </div>
+            </article>
+            <article class="skill-card">
+              <h3>Analysis tools</h3>
+              <div class="tags">
+                <span class="tag">Ansys HFSS</span>
+                <span class="tag">Keysight ADS</span>
+                <span class="tag">VNA</span>
+                <span class="tag">Oscilloscope</span>
+                <span class="tag">Logic Analyzer</span>
+                <span class="tag">CANoe</span>
+                <span class="tag">CANalyzer</span>
+                <span class="tag">LTSPICE</span>
+                <span class="tag">HSPICE</span>
+                <span class="tag">ModelSIM</span>
+                <span class="tag">MATLAB</span>
+              </div>
+            </article>
+            <article class="skill-card">
+              <h3>Programming</h3>
+              <div class="tags">
+                <span class="tag">C</span>
+                <span class="tag">C++</span>
+                <span class="tag">Python</span>
+                <span class="tag">Verilog</span>
+                <span class="tag">Assembly</span>
+                <span class="tag">CAPL</span>
+              </div>
+            </article>
+            <article class="skill-card">
+              <h3>Developer tools</h3>
+              <div class="tags">
+                <span class="tag">CubeIDE</span>
+                <span class="tag">VSCode</span>
+                <span class="tag">Altera DE1-SoC</span>
+                <span class="tag">Git</span>
+                <span class="tag">Jama</span>
+                <span class="tag">Jira</span>
+                <span class="tag">Confluence</span>
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section id="projects">
+        <div class="wrap">
+          <div class="section-head">
+            <h2>Projects</h2>
+            <p>Selected hardware and embedded work. Two pages are placeholders for upcoming write-ups.</p>
+          </div>
+          <div class="project-grid">
+            <a class="project-card" href="projects/health-tracker.html">
+              <p class="meta">Dec 2025 · Embedded</p>
+              <h3>Health Tracker with STM32 and LoRa</h3>
+              <p>
+                Embedded health tracker in C on an STM32, with LoRa wireless, heart-rate sensing,
+                and an accelerometer.
+              </p>
+              <div class="tags">
+                <span class="tag">C</span>
+                <span class="tag">STM32</span>
+                <span class="tag">LoRa</span>
+                <span class="tag">CubeIDE</span>
+                <span class="tag">Sensors</span>
+              </div>
+              <span class="cta">Read more →</span>
+            </a>
+
+            <a class="project-card" href="projects/tx-power-amplifier.html">
+              <p class="meta">Jan 2023 – May 2023 · RF / PCB</p>
+              <h3>TX Power Amplifier and Filter</h3>
+              <p>
+                RF PCB for a flexible radio transceiver: designed in Altium, then soldered and
+                tested to 1 W into 50 Ω.
+              </p>
+              <div class="tags">
+                <span class="tag">Altium</span>
+                <span class="tag">RF design</span>
+                <span class="tag">PCB</span>
+                <span class="tag">Soldering</span>
+              </div>
+              <span class="cta">Read more →</span>
+            </a>
+
+            <a class="project-card" href="projects/hv-measurement-pcb.html">
+              <p class="meta">Feb 2023 · Power / Safety</p>
+              <h3>HV Measurement Point PCB</h3>
+              <p>
+                Safety-critical sensor board that infers voltage through an optocoupler and drives
+                an LED and discharge relay.
+              </p>
+              <div class="tags">
+                <span class="tag">Altium</span>
+                <span class="tag">PCB</span>
+                <span class="tag">Optocoupler</span>
+                <span class="tag">Functional safety</span>
+              </div>
+              <span class="cta">Read more →</span>
+            </a>
+
+            <a class="project-card" href="projects/project-four.html">
+              <p class="meta">Coming soon</p>
+              <h3>Project Four</h3>
+              <p>
+                Filler write-up for an upcoming project. Replace this summary with the problem,
+                hardware, and results when the page is ready.
+              </p>
+              <div class="tags">
+                <span class="tag">TBD</span>
+                <span class="tag">Hardware</span>
+                <span class="tag">Embedded</span>
+              </div>
+              <span class="cta">Read more →</span>
+            </a>
+
+            <a class="project-card" href="projects/project-five.html">
+              <p class="meta">Coming soon</p>
+              <h3>Project Five</h3>
+              <p>
+                Filler write-up for another upcoming project. Use this card for a second detailed
+                case study once the content is ready.
+              </p>
+              <div class="tags">
+                <span class="tag">TBD</span>
+                <span class="tag">PCB</span>
+                <span class="tag">Systems</span>
+              </div>
+              <span class="cta">Read more →</span>
+            </a>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="wrap footer-inner">
+        <span>Kate Ker · ECE, University of Toronto</span>
+        <span>
+          <a href="mailto:ka.te.ker@icloud.com">ka.te.ker@icloud.com</a>
+          ·
+          <a href="https://www.linkedin.com/in/kate-ker/" target="_blank" rel="noreferrer">LinkedIn</a>
+        </span>
+      </div>
+    </footer>
+    <script src="js/main.js"></script>
+  </body>
+</html>

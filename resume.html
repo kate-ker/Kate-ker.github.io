@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Resume | Kate Ker</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;600&family=Outfit:wght@500;650&family=Source+Sans+3:wght@400;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="css/styles.css" />
+  </head>
+  <body>
+    <div class="page-bg" aria-hidden="true"></div>
+    <header class="site-header">
+      <div class="wrap header-inner">
+        <a class="logo" href="index.html">Kate Ker</a>
+        <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav">
+          Menu
+        </button>
+        <nav class="nav" id="site-nav">
+          <a href="index.html#about">About</a>
+          <a href="index.html#skills">Skills</a>
+          <a href="index.html#projects">Projects</a>
+          <a href="resume.html" aria-current="page">Resume</a>
+        </nav>
+      </div>
+    </header>
+
+    <main class="page">
+      <div class="wrap">
+        <div class="resume-top">
+          <div>
+            <p class="kicker">Resume</p>
+            <h1>Kate Ker</h1>
+            <p class="resume-contact">
+              <a href="mailto:ka.te.ker@icloud.com">ka.te.ker@icloud.com</a>
+              ·
+              <a href="https://www.linkedin.com/in/kate-ker/" target="_blank" rel="noreferrer">linkedin.com/in/kate-ker</a>
+            </p>
+          </div>
+          <a class="btn btn-primary" href="assets/Kate-Ker-Resume.pdf">Download PDF</a>
+        </div>
+
+        <article class="resume-block">
+          <h2>Skills</h2>
+          <p><strong>Design tools:</strong> Cadence Allegro, Altium, Soldering, SUE SoC Design Manager, MAX layout editor, SolidWorks, RapidHarness</p>
+          <p><strong>Analysis tools:</strong> Ansys HFSS, Keysight ADS, VNA, Oscilloscope, Logic Analyzer, CANoe, CANalyzer, LTSPICE, HSPICE, ModelSIM, MATLAB</p>
+          <p><strong>Programming:</strong> C, C++, Python, Verilog, Assembly, CAPL</p>
+          <p><strong>Developer tools:</strong> CubeIDE, VSCode, Altera DE1-SoC, Git, Jama, Jira, Confluence</p>
+        </article>
+
+        <article class="resume-block">
+          <h2>Experience</h2>
+
+          <div class="resume-job">
+            <div class="job-head">
+              <h3>Tenstorrent — Signal Integrity Intern, Systems Engineering</h3>
+              <span>Jan 2026 – Present · Toronto, ON</span>
+            </div>
+            <ul>
+              <li>Owned the full design life-cycle of three 112G PAM4 Ethernet daughterboards, executing pre-layout stackup design with vendors, schematic capture and layout using Cadence Allegro and Altium.</li>
+              <li>Optimized Ethernet retimer and PCIe Gen5 channels and transitions using Ansys HFSS and Keysight ADS, evaluating S-parameters, eye diagrams, and BER.</li>
+              <li>Designed coupons and, using a 40 GHz VNA, correlated real-world measurements of DUTs with simulations to refine future designs.</li>
+            </ul>
+          </div>
+
+          <div class="resume-job">
+            <div class="job-head">
+              <h3>Tenstorrent — Signal Integrity Intern, PCB / Systems Engineering</h3>
+              <span>Jan 2026 – Present · Toronto, ON</span>
+            </div>
+            <ul>
+              <li>Owned the full design life-cycle of three 800G Ethernet daughterboards, executing schematic capture and HDI layout using Cadence Allegro and Altium, integrating I2C communication and low-speed control subsystems.</li>
+              <li>Analyzed PCIe and Ethernet designs using Ansys HFSS and Keysight ADS to iteratively optimize layout for signal integrity performance, and verify channels met system requirements.</li>
+              <li>Using a 40 GHz VNA, correlated real-world measurements of DUTs with simulations to refine future designs.</li>
+            </ul>
+          </div>
+
+          <div class="resume-job">
+            <div class="job-head">
+              <h3>Rivian Volkswagen Group Technologies — Electrical Controls Intern, Functional Safety</h3>
+              <span>May 2025 – Dec 2025 · Palo Alto, CA</span>
+            </div>
+            <ul>
+              <li>Conducted HARA and FMEA to define safety goals and derive functional and technical safety requirements for thermal, body, and infotainment systems, designing based on ISO 26262 standards.</li>
+              <li>Designed and brought up a UART-based, man-in-the-middle fault-injection tool to validate safety features, then expanded the tool for functional validation in manufacturing facilities to accelerate production.</li>
+              <li>Performed hardware test setup and debug for infotainment features, involving signal tracing and power measurements using oscilloscopes, logic analyzers, and multimeters.</li>
+            </ul>
+          </div>
+
+          <div class="resume-job">
+            <div class="job-head">
+              <h3>Rivian Automotive — Electrical Engineering Intern, Functional Safety</h3>
+              <span>May 2024 – Aug 2024 · Irvine, CA</span>
+            </div>
+            <ul>
+              <li>Performed testing on Labcar/HIL systems to validate Body and Thermal safety goals, ensuring compliance with functional safety standards.</li>
+              <li>Assessed and executed 24 comprehensive, vehicle-level test cases tailored to technical safety requirements.</li>
+              <li>Created Python and CAPL test scripts to execute and automate hardware tests on different HIL setups.</li>
+            </ul>
+          </div>
+
+          <div class="resume-job">
+            <div class="job-head">
+              <h3>University of Toronto Formula Racing Team — Low Voltage Architecture Lead</h3>
+              <span>Dec 2022 – Aug 2024 · Toronto, ON</span>
+            </div>
+            <ul>
+              <li>Led a multi-functional team of seven in the design and testing of the low-voltage vehicle power architecture, including power regulation and distribution, CAN bus communication, and data acquisition systems.</li>
+              <li>Designed, soldered, and debugged custom PCBAs, using oscilloscopes and multimeters for validation.</li>
+              <li>Designed electrical enclosures in SolidWorks from sheet metal and 3D print. Planned and manufactured harness architecture, reducing weight by 60% from the previous year and improving reliability and manufacturability.</li>
+            </ul>
+          </div>
+
+          <div class="resume-job">
+            <div class="job-head">
+              <h3>SED Lab, Faculty of Mechanical and Industrial Engineering — Undergraduate Research Assistant</h3>
+              <span>May 2023 – Sept 2024 · Toronto, ON</span>
+            </div>
+            <ul>
+              <li>Compiled and synthesized findings on the effectiveness and future development of command and control centers. Recipient of the First Year Summer Research Fellowship from the University of Toronto.</li>
+            </ul>
+          </div>
+        </article>
+
+        <article class="resume-block">
+          <h2>Education</h2>
+          <div class="job-head">
+            <h3>University of Toronto — Electrical &amp; Computer Engineering, Undergraduate</h3>
+            <span>Sept 2022 – May 2027</span>
+          </div>
+        </article>
+
+        <article class="resume-block">
+          <h2>Projects</h2>
+          <div class="resume-job">
+            <div class="job-head">
+              <h3>Health Tracker using STM32 and LoRa Module</h3>
+              <span>Dec 2025</span>
+            </div>
+            <ul>
+              <li>Designed and implemented an embedded health tracker in C using an STM32 microcontroller, LoRa module (wireless), and integrated heart-rate and accelerometer sensors.</li>
+            </ul>
+          </div>
+          <div class="resume-job">
+            <div class="job-head">
+              <h3>TX Power Amplifier and Filter for Flexible Radio Transceiver</h3>
+              <span>Jan 2023 – May 2023</span>
+            </div>
+            <ul>
+              <li>Applied RF design principles to design a PCB in Altium, then soldered and tested the board. Generated 1 W of continuous power to a 50 Ω load from an 8–16 MHz input signal.</li>
+            </ul>
+          </div>
+          <div class="resume-job">
+            <div class="job-head">
+              <h3>HV Measurement Point PCB</h3>
+              <span>Feb 2023</span>
+            </div>
+            <ul>
+              <li>Designed a PCB in Altium that acts as a safety-critical sensor. Uses an optocoupler to determine measured voltage, and controls an LED indicator and relay to a discharge resistor.</li>
+            </ul>
+          </div>
+        </article>
+      </div>
+    </main>
+
+    <footer class="site-footer">
+      <div class="wrap footer-inner">
+        <span>Kate Ker · ECE, University of Toronto</span>
+        <a href="index.html">Back to home</a>
+      </div>
+    </footer>
+    <script src="js/main.js"></script>
+  </body>
+</html>
