@@ -1,14 +1,19 @@
 :root {
-  --bg: #0b1014;
-  --bg-elevated: #121a21;
-  --bg-card: #162028;
-  --line: #2a3a46;
-  --text: #e8eef2;
-  --muted: #9aadb8;
-  --accent: #d4a056;
-  --accent-2: #4ecdc4;
-  --accent-dim: rgba(212, 160, 86, 0.14);
-  --shadow: 0 18px 40px rgba(0, 0, 0, 0.28);
+  --sky: #42cafd;
+  --aqua: #84ebf5;
+  --mint: #7ed17e;
+  --cream: #f6efa6;
+  --coral: #ffa09d;
+  --bg: #fffdec;
+  --bg-elevated: #f6efa6;
+  --bg-card: #fffdec;
+  --line: #42cafd;
+  --text: #140705;
+  --muted: rgba(20, 7, 5, 0.72);
+  --accent: #42cafd;
+  --accent-2: #7ed17e;
+  --accent-3: #ffa09d;
+  --shadow: 0 16px 32px rgba(66, 202, 253, 0.18);
   --radius: 14px;
   --max: 1080px;
   --nav-h: 72px;
@@ -35,8 +40,8 @@ body {
   font-family: "Source Sans 3", "Segoe UI", sans-serif;
   color: var(--text);
   background:
-    radial-gradient(1200px 500px at 80% -10%, rgba(78, 205, 196, 0.08), transparent 50%),
-    radial-gradient(900px 420px at -10% 20%, rgba(212, 160, 86, 0.08), transparent 45%),
+    radial-gradient(1200px 500px at 80% -10%, rgba(132, 235, 245, 0.7), transparent 50%),
+    radial-gradient(900px 420px at -10% 20%, rgba(255, 160, 157, 0.28), transparent 45%),
     var(--bg);
   line-height: 1.6;
   min-height: 100vh;
@@ -47,8 +52,8 @@ body {
   inset: 0;
   pointer-events: none;
   background-image:
-    linear-gradient(rgba(42, 58, 70, 0.35) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(42, 58, 70, 0.35) 1px, transparent 1px);
+    linear-gradient(rgba(66, 202, 253, 0.28) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(66, 202, 253, 0.28) 1px, transparent 1px);
   background-size: 48px 48px;
   mask-image: radial-gradient(ellipse at center, black 20%, transparent 75%);
   z-index: -1;
@@ -77,7 +82,7 @@ img {
   top: 0;
   z-index: 20;
   backdrop-filter: blur(16px);
-  background: rgba(11, 16, 20, 0.78);
+  background: rgba(255, 253, 236, 0.86);
   border-bottom: 1px solid var(--line);
 }
 
@@ -96,11 +101,14 @@ img {
   text-transform: uppercase;
   color: var(--text);
   font-size: 0.92rem;
+  padding: 6px 10px;
+  border-radius: 999px;
 }
 
 .logo:hover {
   text-decoration: none;
-  color: var(--accent);
+  color: var(--text);
+  background: var(--coral);
 }
 
 .nav {
@@ -119,7 +127,7 @@ img {
 .nav a:hover,
 .nav a[aria-current="page"] {
   color: var(--text);
-  background: var(--bg-elevated);
+  background: var(--aqua);
   text-decoration: none;
 }
 
@@ -139,11 +147,15 @@ img {
 
 .kicker {
   font-family: "IBM Plex Mono", ui-monospace, monospace;
-  color: var(--accent);
-  font-size: 0.82rem;
-  letter-spacing: 0.16em;
+  display: inline-block;
+  background: var(--sky);
+  color: var(--text);
+  font-size: 0.78rem;
+  letter-spacing: 0.14em;
   text-transform: uppercase;
   margin: 0 0 14px;
+  padding: 5px 10px;
+  border-radius: 999px;
 }
 
 h1,
@@ -198,8 +210,8 @@ h3 {
 }
 
 .btn-primary {
-  background: var(--accent);
-  color: #1a1208;
+  background: var(--sky);
+  color: var(--text);
 }
 
 .btn-primary:hover {
@@ -213,8 +225,9 @@ h3 {
 }
 
 .btn-ghost:hover {
-  border-color: var(--accent);
-  color: var(--accent);
+  border-color: var(--coral);
+  color: var(--text);
+  background: rgba(255, 160, 157, 0.35);
 }
 
 .section-head {
@@ -256,7 +269,10 @@ h3 {
   font-size: 0.78rem;
   letter-spacing: 0.12em;
   text-transform: uppercase;
-  color: var(--accent-2);
+  color: var(--text);
+  display: inline-block;
+  border-bottom: 3px solid var(--mint);
+  padding-bottom: 4px;
 }
 
 .tags {
@@ -268,8 +284,8 @@ h3 {
 .tag {
   font-size: 0.85rem;
   color: var(--text);
-  background: var(--bg-elevated);
-  border: 1px solid var(--line);
+  background: var(--aqua);
+  border: 1px solid transparent;
   border-radius: 999px;
   padding: 5px 10px;
 }
@@ -292,7 +308,7 @@ h3 {
 
 .project-card:hover {
   transform: translateY(-3px);
-  border-color: var(--accent);
+  border-color: var(--mint);
   text-decoration: none;
 }
 
@@ -309,7 +325,7 @@ h3 {
 }
 
 .project-card .cta {
-  color: var(--accent);
+  color: var(--text);
   font-weight: 650;
   font-size: 0.92rem;
 }
@@ -410,7 +426,7 @@ h3 {
     top: var(--nav-h);
     left: 0;
     right: 0;
-    background: rgba(11, 16, 20, 0.96);
+    background: rgba(255, 253, 236, 0.98);
     border-bottom: 1px solid var(--line);
     padding: 12px 20px 18px;
     flex-direction: column;
